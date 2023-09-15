@@ -1,12 +1,21 @@
+//Handling bad form filled
+document.querySelector('.form').addEventListener('submit',(e)=>{
+    let amt = document.getElementById('amount');
+    let dsc = document.getElementById('disc');
+    let cat = document.getElementById('cat');
+    if(amt.value =='' || dsc.value=='' || cat.value=='Select'){
+        e.preventDefault()
+        alert('Please fill all fields and select a category')
+    }
+})
+
 //delete and edit button
 let delBtn=document.createElement('button');
 delBtn.className='delete';
 delBtn.innerText='Delete';
-delBtn.style='font-Size:10px;float:right; background-Color:red; margin-right:3px; margin-top:2px;'
 let editBtn=document.createElement('button');
 editBtn.className='edit';
 editBtn.innerText='Edit';
-editBtn.style='font-Size:10px; float:right; background-Color:yellow; margin-right:3px; margin-top:2px'
 
 //Displayig expenses on screen
 function updateList(items){

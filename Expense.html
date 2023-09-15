@@ -7,18 +7,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
     </head>
 <body>
 
     <div id='mainContainer' class="container-md">
-        <form action="/postExpense" method="POST" style="text-align: center; border: 2px solid black;" id= 'form' class="form">
+        <form action="/postExpense" method="POST"id= 'form' class="form">
             <h1 >Expense Tracking App</h1>
             <label for="amount" >Enter Amount</label><br>
             <input type="text" id="amount" name="amount"><br>
             <label for="disc" >Description</label><br>
-            <input type="text" id="disc" name="description"><br>
+            <input class="description" type="text" id="disc" name="description"><br>
             <label for="cat" >Select Category</label><br>
-            <select id="cat" name="category" style="margin-bottom: 5px;">
+            <select class="category" id="cat" name="category">
+                <option> Select</option>
                 <option>Food</option>
                 <option>Entertainment</option>
                 <option>Travel</option>
@@ -27,38 +29,43 @@
                 <option>Rent</option>
             </select><br>
             <input type="hidden" id="did" name="did">
-            <button type="submit" id="submit" style="margin-bottom: 5px;">Add Expense!</button>
+            <button type="submit" id="submit">Add Expense!</button>
 
 
         </form>
-        <ul id="list" style="text-align: center; border: 2px solid black; margin-top: -2px;"></ul>
+        <ul id="list">
+            <li>
+                <h3>Expense List</h3>
+                <hr>
+            </li>
+        </ul>
     </div>
-    <div id="stats" class="container-md" style="border: 2px solid black;">
-        <div class="row" style="border-bottom: 2px solid black;">
+    <div id="stats" class="container-md">
+        <div>
             <h3 style="text-align: center;">Expense Analysis</h3>
         </div>
-        <div class="row" style="text-align: center;">
-            <div class="col-sm" id="col1" style="border-right: 2px black solid;">
+        <div class="row">
+            <div class="col-sm" id="col1">
                 <h5>Food</h5>
                 <h6></h6>
                 <h6></h6>
             </div>
-            <div class="col-sm" id="col2" style="border-right: 2px black solid;">
+            <div class="col-sm" id="col2">
                 <h5>Entertainment</h5>
                 <h6></h6>
                 <h6></h6>
             </div>
-            <div class="col-sm" id="col3" style="border-right: 2px black solid;">
+            <div class="col-sm" id="col3">
                 <h5>Travel</h5>
                 <h6></h6>
                 <h6></h6>
             </div>
-            <div class="col-sm" id="col4" style="border-right: 2px black solid;">
+            <div class="col-sm" id="col4">
                 <h5>Phone</h5>
                 <h6></h6>
                 <h6></h6>
             </div>
-            <div class="col-sm" id="col5" style="border-right: 2px black solid;">
+            <div class="col-sm" id="col5">
                 <h5>Medical</h5>
                 <h6></h6>
                 <h6></h6>
